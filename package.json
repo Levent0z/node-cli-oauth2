@@ -1,0 +1,8 @@
+{
+  "name": "node-cli-sso",
+  "version": "1.0.0",
+  "description": "Example application to showcase how to do SSO in a Node CLI",
+  "main": "index.js",
+  "author": "Levent Oz",
+  "license": "MIT"
+}
