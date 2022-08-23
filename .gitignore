@@ -1,0 +1,4 @@
+node_modules/
+
+# export CONSUMER_KEY and CONSUMER_SECRET in the file below
+set-env.sh 

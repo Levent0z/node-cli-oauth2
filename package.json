@@ -1,8 +1,14 @@
 {
-  "name": "node-cli-sso",
-  "version": "1.0.0",
-  "description": "Example application to showcase how to do SSO in a Node CLI",
-  "main": "index.js",
-  "author": "Levent Oz",
-  "license": "MIT"
+    "name": "node-cli-sso",
+    "version": "1.0.0",
+    "description": "Example application to showcase how to do SSO in a Node CLI",
+    "main": "index.js",
+    "author": "Levent Oz",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^18.7.6"
+    },
+    "scripts": {
+        "start": "source ./set-env.sh && node index.js"
+    }
 }

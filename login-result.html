@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<body>
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <script>
+        const searchObj = {};
+        window.location.search.substr(1).split('&').forEach(v => {
+            const [key, value] = v.split('=');
+            searchObj[decodeURIComponent(key)] = decodeURIComponent(value).replaceAll('+', ' ');
+        });
+
+        let msg = searchObj.error_description || searchObj.error;
+        if (!msg) {
+            const hash = window.location.hash.substr(1);
+            if (!hash) {
+                msg = 'Failed to parse response.';
+            } else {
+                fetch(`hash/${hash}`);
+            }
+        }
+        const titleElement = document.getElementsByTagName('h1')[0];
+        const textElement = document.getElementsByTagName('p')[0];
+        const subTextElement = document.getElementsByTagName('p')[1];
+        if (msg) {
+            titleElement.innerText = 'Failed';
+            textElement.innerText = msg;
+            subTextElement.innerText = 'Please try again.';
+        } else {
+            titleElement.innerText = 'Logged In';
+            textElement.innerText = 'You can close this window.';
+        }
+    </script>
+</body>
+
+</html>
